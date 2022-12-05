@@ -1,5 +1,12 @@
 @import './reset/reset.scss';
+@import './general/vars.scss';
 @import './fonts.scss';
 
 @import './general/body.scss';
 @import './general/common.scss';
+
+@import './blocks/header.scss';
+@import './blocks/tabs.scss';
+@import './blocks/progress-bar.scss';
+@import './blocks/sett-window.scss';
+

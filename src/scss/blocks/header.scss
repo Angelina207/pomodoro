@@ -1,0 +1,16 @@
+.head-title{
+    display: flex;
+    justify-content: center;
+    padding-top: 32px;
+}
+.head-title-text{
+    color: $text-head;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 30px;
+}
+@media screen and (min-width: 768px) {
+    .head-title-text{
+        font-size: 2rem;
+    }
+}

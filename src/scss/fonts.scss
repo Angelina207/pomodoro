@@ -1,4 +1,67 @@
 @font-face {
+	font-family: KumbhSans;
+	font-display: swap;
+	src: url("../fonts/KumbhSans-Black.woff2") format("woff2"), url("../fonts/KumbhSans-Black.woff") format("woff");
+	font-weight: 900;
+	font-style: normal;
+}
+@font-face {
+	font-family: KumbhSans;
+	font-display: swap;
+	src: url("../fonts/KumbhSans-Bold.woff2") format("woff2"), url("../fonts/KumbhSans-Bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: KumbhSans;
+	font-display: swap;
+	src: url("../fonts/KumbhSans-ExtraLight.woff2") format("woff2"), url("../fonts/KumbhSans-ExtraLight.woff") format("woff");
+	font-weight: 200;
+	font-style: normal;
+}
+@font-face {
+	font-family: KumbhSans;
+	font-display: swap;
+	src: url("../fonts/KumbhSans-Medium.woff2") format("woff2"), url("../fonts/KumbhSans-Medium.woff") format("woff");
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: KumbhSans;
+	font-display: swap;
+	src: url("../fonts/KumbhSans-Light.woff2") format("woff2"), url("../fonts/KumbhSans-Light.woff") format("woff");
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: KumbhSans;
+	font-display: swap;
+	src: url("../fonts/KumbhSans-ExtraBold.woff2") format("woff2"), url("../fonts/KumbhSans-ExtraBold.woff") format("woff");
+	font-weight: 800;
+	font-style: normal;
+}
+@font-face {
+	font-family: KumbhSans;
+	font-display: swap;
+	src: url("../fonts/KumbhSans-SemiBold.woff2") format("woff2"), url("../fonts/KumbhSans-SemiBold.woff") format("woff");
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: KumbhSans;
+	font-display: swap;
+	src: url("../fonts/KumbhSans-Thin.woff2") format("woff2"), url("../fonts/KumbhSans-Thin.woff") format("woff");
+	font-weight: 100;
+	font-style: normal;
+}
+@font-face {
+	font-family: KumbhSans;
+	font-display: swap;
+	src: url("../fonts/KumbhSans-Regular.woff2") format("woff2"), url("../fonts/KumbhSans-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
 	font-family: RobotoSlab;
 	font-display: swap;
 	src: url("../fonts/RobotoSlab-Bold.woff2") format("woff2"), url("../fonts/RobotoSlab-Bold.woff") format("woff");
@@ -15,20 +78,6 @@
 @font-face {
 	font-family: RobotoSlab;
 	font-display: swap;
-	src: url("../fonts/RobotoSlab-Black.woff2") format("woff2"), url("../fonts/RobotoSlab-Black.woff") format("woff");
-	font-weight: 900;
-	font-style: normal;
-}
-@font-face {
-	font-family: RobotoSlab;
-	font-display: swap;
-	src: url("../fonts/RobotoSlab-Medium.woff2") format("woff2"), url("../fonts/RobotoSlab-Medium.woff") format("woff");
-	font-weight: 500;
-	font-style: normal;
-}
-@font-face {
-	font-family: RobotoSlab;
-	font-display: swap;
 	src: url("../fonts/RobotoSlab-Light.woff2") format("woff2"), url("../fonts/RobotoSlab-Light.woff") format("woff");
 	font-weight: 300;
 	font-style: normal;
@@ -38,6 +87,13 @@
 	font-display: swap;
 	src: url("../fonts/RobotoSlab-ExtraLight.woff2") format("woff2"), url("../fonts/RobotoSlab-ExtraLight.woff") format("woff");
 	font-weight: 200;
+	font-style: normal;
+}
+@font-face {
+	font-family: RobotoSlab;
+	font-display: swap;
+	src: url("../fonts/RobotoSlab-Medium.woff2") format("woff2"), url("../fonts/RobotoSlab-Medium.woff") format("woff");
+	font-weight: 500;
 	font-style: normal;
 }
 @font-face {
@@ -59,5 +115,40 @@
 	font-display: swap;
 	src: url("../fonts/RobotoSlab-Thin.woff2") format("woff2"), url("../fonts/RobotoSlab-Thin.woff") format("woff");
 	font-weight: 100;
+	font-style: normal;
+}
+@font-face {
+	font-family: SpaceMono;
+	font-display: swap;
+	src: url("../fonts/SpaceMono-Bold.woff2") format("woff2"), url("../fonts/SpaceMono-Bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: SpaceMono;
+	font-display: swap;
+	src: url("../fonts/SpaceMono-BoldItalic.woff2") format("woff2"), url("../fonts/SpaceMono-BoldItalic.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: SpaceMono;
+	font-display: swap;
+	src: url("../fonts/SpaceMono-Italic.woff2") format("woff2"), url("../fonts/SpaceMono-Italic.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: SpaceMono;
+	font-display: swap;
+	src: url("../fonts/SpaceMono-Regular.woff2") format("woff2"), url("../fonts/SpaceMono-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: RobotoSlab;
+	font-display: swap;
+	src: url("../fonts/RobotoSlab-Black.woff2") format("woff2"), url("../fonts/RobotoSlab-Black.woff") format("woff");
+	font-weight: 900;
 	font-style: normal;
 }
