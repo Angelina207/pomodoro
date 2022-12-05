@@ -225,11 +225,6 @@ body {
   padding-top: 45px;
 }
 
-.tab-wrapp {
-  width: 100%;
-  max-width: 373px;
-}
-
 .tab-btn-list {
   display: flex;
   box-sizing: border-box;
@@ -238,8 +233,6 @@ body {
   background-color: #161932;
   border-radius: 31.5px;
   padding: 8px 6px;
-  min-width: 287px;
-  max-width: 327px;
 }
 
 .tab-btn {
@@ -259,5 +252,11 @@ body {
 @media screen and (min-width: 380px) {
   .tab-btn {
     padding: 16px 22px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .tab-btn {
+    font-size: 0.9rem;
+    padding: 19px 26px;
   }
 }
