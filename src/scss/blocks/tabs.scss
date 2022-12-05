@@ -1,0 +1,38 @@
+.tab{
+    display: flex;
+    justify-content: center;
+    padding-top: 45px;
+}
+.tab-wrapp{
+    width: 100%;
+    max-width: 373px;
+}
+.tab-btn-list{
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    background-color: $overlay;
+    border-radius: 31.5px;
+    padding: 8px 6px;
+    min-width: 287px;
+    max-width: 327px;
+}
+.tab-btn{
+    color: #757A92FF;
+    font-weight: 700;
+    font-size: 0.8rem;
+    line-height: 15px;
+    padding: 14px 15px;
+    border-radius: 26.5px;
+}
+.is-active{
+    color: $select-hover;
+    background-color: $accent;
+}
+
+@media screen and (min-width: 380px) {
+    .tab-btn{
+        padding: 16px 22px;
+    }
+}
