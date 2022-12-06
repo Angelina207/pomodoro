@@ -9,6 +9,11 @@ input, li, ul, ol, a, p, span {
   list-style: none;
 }
 
+button {
+  outline: none;
+  border: none;
+}
+
 @font-face {
   font-family: KumbhSans;
   font-display: swap;
@@ -164,12 +169,12 @@ input, li, ul, ol, a, p, span {
   font-style: normal;
 }
 body {
-  min-width: 320px;
-  width: 100%;
+  min-width: 100%;
+  width: 100vw;
   min-height: 100%;
   height: 100vh;
   box-sizing: border-box;
-  font-family: "Kumbh Sans";
+  font-family: "Kumbh Sans", sans-serif;
   background-color: #1E213F;
 }
 
@@ -199,6 +204,16 @@ body {
 
 .accent {
   background-color: #F87070;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  background: #161932;
+  opacity: 0.8;
 }
 
 .head-title {
@@ -240,7 +255,7 @@ body {
   font-weight: 700;
   font-size: 0.8rem;
   line-height: 15px;
-  padding: 14px 15px;
+  padding: 14px 10px;
   border-radius: 26.5px;
 }
 
@@ -259,4 +274,94 @@ body {
     font-size: 0.9rem;
     padding: 19px 26px;
   }
+}
+.sett {
+  display: flex;
+  justify-content: center;
+  padding-top: 80px;
+}
+
+.sett-btn {
+  background: transparent;
+  opacity: 0.5;
+}
+
+.sec__setting {
+  position: relative;
+  z-index: 3;
+}
+
+.sett-wrapp {
+  position: relative;
+  box-sizing: border-box;
+  margin: 0 auto;
+  background: #fff;
+  width: 100%;
+  max-width: 327px;
+  height: auto;
+  border-radius: 15px;
+  padding: 24px;
+}
+
+.sett-header {
+  display: flex;
+}
+
+.sett-title {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.sett-btn-close {
+  background: transparent;
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  width: 30px;
+  height: 30px;
+}
+.sett-btn-close::after, .sett-btn-close::before {
+  position: absolute;
+  right: 5px;
+  content: "";
+  width: 20px;
+  height: 2px;
+  background-color: #979797;
+}
+.sett-btn-close::after {
+  transform: rotate(45deg);
+}
+.sett-btn-close::before {
+  transform: rotate(-45deg);
+}
+
+.sett__select {
+  padding-top: 53px;
+}
+
+.select-time-title {
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 4px;
+}
+
+.select-time-wrapp {
+  display: flex;
+}
+
+.select-time-type {
+  color: #1E213F;
+  font-weight: 700;
+  font-size: 0.8rem;
+  opacity: 0.4;
+  line-height: 15px;
+}
+
+.select-minutes {
+  color: #1E213F;
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 17px;
 }
