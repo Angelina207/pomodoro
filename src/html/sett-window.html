@@ -1,5 +1,5 @@
 <section class="sec__setting">
-    <div class="container">
+    <div class="">
         <div class="sett-wrapp">
             <div class="sett-header">
                 <p class="sett-title">Settings</p>
@@ -45,29 +45,43 @@
 
             <div class="border-line">
                 <p class="select-title">FONT</p>
-                <form class="select-font-wrapp">
-                    <label for="kumbh" class="select-label-font"></label>
-                    <label for="roboto" class="select-label-font"></label>
-                    <label for="space" class="select-label-font"></label>
-    
-                    <input type="radio" class="select-radio" name="radio" value="kumbh-sans" id="kumbh" checked>
-                    <input type="radio" class="select-radio" name="radio" value="roboto-slab" id="roboto">
-                    <input type="radio" class="select-radio" name="radio" value="space-mono" id="space">
+                <form class="select-font-form">
+                    <div class="select-radio">
+                        <input type="radio" class="select-radio-btn font" name="font" value="KumbhSans" id="kumbh" checked>
+                        <label for="kumbh" class="select-label-font kumbh"></label>
+                    </div>
+                    <div class="select-radio">
+                        <input type="radio" class="select-radio-btn font" name="font" value="RobotoSlab" id="roboto">
+                        <label for="roboto" class="select-label-font roboto"></label>
+                    </div>
+                    <div class="select-radio">
+                        <input type="radio" class="select-radio-btn font" name="font" value="SpaceMono" id="space">
+                        <label for="space" class="select-label-font space"></label>
+                    </div>
                 </form>
             </div>
 
             <div class="">
                 <p class="select-title">COLOR</p>
-                <form class="select-color-wrapp">
-                    <label for="red" class="select-label-color"></label>
-                    <label for="blue" class="select-label-color"></label>
-                    <label for="purple" class="select-label-color"></label>
-    
-                    <input type="radio" class="select-radio" name="radio" value="red" id="red" checked>
-                    <input type="radio" class="select-radio" name="radio" value="blue" id="blue">
-                    <input type="radio" class="select-radio" name="radio" value="purple" id="purple">
+                <form class="select-color-form">
+                    <div class="select-radio">
+                        <input type="radio" class="select-radio-btn color" name="color" value="#F87070" id="red" checked>
+                        <label for="red" class="select-label-color red"></label>
+                    </div>
+                    <div class="select-radio">
+                        <input type="radio" class="select-radio-btn color" name="color" value="#70F3F8" id="blue">
+                        <label for="blue" class="select-label-color blue"></label>
+                    </div>
+                    <div class="select-radio">
+                        <input type="radio" class="select-radio-btn color" name="color" value="#D881F8" id="purple">
+                        <label for="purple" class="select-label-color purple"></label>
+                    </div>
                 </form>
             </div>
+
+            <button class="select-btn-apply">
+                Apply
+            </button>
         </div>
     </div>
 </section>

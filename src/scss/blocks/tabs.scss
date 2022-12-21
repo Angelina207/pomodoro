@@ -19,12 +19,20 @@
     line-height: 15px;
     padding: 14px 10px;
     border-radius: 26.5px;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+        color: #fff;
+    }
 }
 .is-active{
     color: $select-hover;
     background-color: $accent;
+    &:hover,
+    &:focus {
+        color: $select-hover;
+    }
 }
-
 @media screen and (min-width: 380px) {
     .tab-btn{
         padding: 16px 22px;

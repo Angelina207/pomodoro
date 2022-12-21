@@ -1,11 +1,12 @@
-body {
+.body {
     min-width: 100%;
     width: 100vw;
     min-height: 100%;
     height: 100vh;
     box-sizing: border-box;
-    font-family: 'Kumbh Sans', sans-serif;
+    font-family: KumbhSans, sans-serif;
     background-color: $body;
+    overflow-x: hidden;
 }
 
 .container {
