@@ -13,31 +13,30 @@ export function settings() {
     overlay.style.display = 'none';
    });
 
-   // apply settings
+   // settings
    document.querySelector('.select-btn-apply').addEventListener('click', applySettings); 
-   
+
    function getInputValue() {
       const inputFont = document.getElementsByName('font');
       const inputColor = document.getElementsByName('color');
 
       for (let i = 0; i < inputFont.length; i++) {
-         inputFont[i].addEventListener('click', function() {
-            if (inputFont[i].checked) {
-               localStorage.setItem('font', this.value)
-            }
+         inputFont[i].addEventListener('change', function() {
+            
+            if (inputFont[i].checked) localStorage.setItem('font', this.value)
          })
       }
+
       for (let i = 0; i < inputColor.length; i++) {
-         inputColor[i].addEventListener('click', function() {
-            if (inputColor[i].checked) {
-               localStorage.setItem('color', this.value)
-            }
+         inputColor[i].addEventListener('change', function() {
+
+            if (inputColor[i].checked) localStorage.setItem('color', this.value)
          })
       }
    }
    getInputValue()
 
-   function applySettings() {
+   function applySettings() { 
       let FONT = localStorage.getItem('font');
       let COLOR = localStorage.getItem('color');
 
@@ -48,9 +47,7 @@ export function settings() {
 
       body.style.fontFamily = `${FONT}, sans-serif`;
 
-      for( let btn of button ) {
-         btn.style.fontFamily = `${FONT}, sans-serif`;
-      }
+      for( let btn of button )  btn.style.fontFamily = `${FONT}, sans-serif`;
 
       btnApply .style.background = `${COLOR}`;
       activeTab.style.background = `${COLOR}`;
