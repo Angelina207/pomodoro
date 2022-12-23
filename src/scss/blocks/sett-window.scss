@@ -14,17 +14,18 @@
 .sec__setting{
     position: relative;
     z-index: 3;
-    transition: all 500ms;
-    transform: translateY(-1000px);
+    transition: all 1s;
+    transform: translateY(-5000px);
     opacity: 0;
 }
 .is-open {
     transition: all 500ms;
-    transform: translateY(-100px);
+    transform: translateY(-500px);
     opacity: 1;
 }
 .sett-wrapp{
     position: absolute;
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
     box-sizing: border-box;
