@@ -1,18 +1,5 @@
 export function settings() {
 
-   // Open & close settings
-   const overlay = document.querySelector('.overlay');
-   const settWindow = document.querySelector('.sec__setting');
-   
-   document.querySelector('.sett-btn').addEventListener('click', () => {
-    settWindow.classList.add('is-open');
-    overlay.style.display = 'block';
-   });
-   document.querySelector('.sett-btn-close').addEventListener('click', () => {
-    settWindow.classList.remove('is-open');
-    overlay.style.display = 'none';
-   });
-
    // settings
    document.querySelector('.select-btn-apply').addEventListener('click', applySettings); 
 
