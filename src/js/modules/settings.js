@@ -1,43 +1,47 @@
 export function settings() {
-
-   // settings
-   document.querySelector('.select-btn-apply').addEventListener('click', applySettings); 
-
-   function getInputValue() {
-      const inputFont = document.getElementsByName('font');
-      const inputColor = document.getElementsByName('color');
-
-      for (let i = 0; i < inputFont.length; i++) {
-         inputFont[i].addEventListener('change', function() {
-            
-            if (inputFont[i].checked) localStorage.setItem('font', this.value)
-         })
-      }
-
-      for (let i = 0; i < inputColor.length; i++) {
-         inputColor[i].addEventListener('change', function() {
-
-            if (inputColor[i].checked) localStorage.setItem('color', this.value)
+   const fonts = document.getElementsByName('font');
+   const colors = document.getElementsByName('color');
+   let COLOR = getColorFromLocalStorage() || '#F87070'; // the red is default
+   let FONT = getFontFromLocalStorage() || 'KumbhSans, sans-serif'; // the 'KumbhSans' is default
+ 
+   function getInputValue(items) {
+      for (let item of items) {
+         item.addEventListener('change', function() {
+            item.name === 'color' ? localStorage.setItem('color', item.value) : localStorage.setItem('font', item.value);  
          })
       }
    }
-   getInputValue()
+   getInputValue(fonts)
+   getInputValue(colors)
 
-   function applySettings() { 
-      let FONT = localStorage.getItem('font');
-      let COLOR = localStorage.getItem('color');
+   function getColorFromLocalStorage() {
+      return localStorage.getItem('color')
+   }
+   function getFontFromLocalStorage() {
+      return localStorage.getItem('font')
+   }
+   
+   function changeElementColor() {
+      const tabs = document.querySelectorAll('.tab-btn');
+      for (let i = 0; i < tabs.length; i++) {
+         tabs[i].className === 'tab-btn is-active' ? tabs[i].style.background = COLOR : tabs[i].style.background = 'transparent';
+      }
+      document.querySelector('.select-btn-apply').style.background = COLOR;
+   }
+   changeElementColor()
 
+   function changeBodyFont () { 
       const body = document.querySelector('.body');
-      const button = document.getElementsByTagName('button');
-      const btnApply  = document.querySelector('.select-btn-apply');
-      const activeTab = document.querySelector('.is-active');
+      const buttons = document.querySelectorAll('button');
 
+      for (let button of buttons) {
+         button.style.fontFamily = `${FONT}, sans-serif`;
+         FONT !== 'RobotoSlab' ? button.style.fontWeight = '700' : button.style.fontWeight = '400';
+      }
       body.style.fontFamily = `${FONT}, sans-serif`;
-
-      for( let btn of button )  btn.style.fontFamily = `${FONT}, sans-serif`;
-
-      btnApply .style.background = `${COLOR}`;
-      activeTab.style.background = `${COLOR}`;
+      FONT !== 'RobotoSlab' ? body.style.fontWeight = '700' : body.style.fontWeight = '400';
    }
-   applySettings()
+   changeBodyFont()
+
+   document.querySelector('.select-btn-apply').addEventListener('click', () => document.location.reload());  
 }
