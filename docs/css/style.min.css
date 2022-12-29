@@ -268,7 +268,6 @@ button {
 
 .is-active {
   color: #161932;
-  background-color: #F87070;
 }
 .is-active:hover, .is-active:focus {
   color: #161932;
@@ -313,13 +312,40 @@ button {
 }
 
 .pie {
-  width: 300px;
-  height: 300px;
-  color: #F87070;
+  min-width: 250px;
+  min-height: 250px;
+}
+
+.pie > svg {
+  width: 250px;
+  height: 250px;
+}
+
+.pie-text-1,
+.pie-text-2,
+.pie-text-3 {
+  fill: #D7E0FF;
+  font-size: 1rem;
+}
+
+.pie-circle-1,
+.pie-circle-2,
+.pie-circle-3 {
+  stroke-width: 2px;
+  stroke: #F87070;
+  stroke-linecap: round;
 }
 
 @media screen and (min-width: 380px) {
   .progress-wrapp {
+    width: 300px;
+    height: 300px;
+  }
+  .pie {
+    min-width: 300px;
+    min-height: 300px;
+  }
+  .pie > svg {
     width: 300px;
     height: 300px;
   }
