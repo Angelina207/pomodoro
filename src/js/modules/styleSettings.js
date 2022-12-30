@@ -7,9 +7,11 @@ export function settings() {
    function getInputValue(items) {
       for (let item of items) {
          item.addEventListener('change', function() {
-            item.name === 'color' ? localStorage.setItem('color', item.value) : localStorage.setItem('font', item.value);  
+            item.name === 'color' ? localStorage.setItem('color', item.value) : localStorage.setItem('font', item.value);
          })
-      }
+         if (item.value === FONT) item.checked = true;
+         if (item.value === COLOR) item.checked = true;
+      } 
    }
    getInputValue(fonts)
    getInputValue(colors)
@@ -20,7 +22,6 @@ export function settings() {
    function getFontFromLocalStorage() {
       return localStorage.getItem('font')
    }
-   
    function changeElementColor() {
       const tabs = document.querySelectorAll('.tab-btn');
       for (let i = 0; i < tabs.length; i++) {
