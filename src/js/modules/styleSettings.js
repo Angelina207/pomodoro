@@ -2,20 +2,20 @@ export function settings() {
    const fonts = document.getElementsByName('font');
    const colors = document.getElementsByName('color');
    let COLOR = getColorFromLocalStorage() || '#F87070'; // the red is default
-   let FONT = getFontFromLocalStorage() || 'KumbhSans, sans-serif'; // the 'KumbhSans' is default
+   let FONT = getFontFromLocalStorage() || 'KumbhSans'; // the 'KumbhSans' is default
  
    function getInputValue(items) {
       for (let item of items) {
          item.addEventListener('change', function() {
             item.name === 'color' ? localStorage.setItem('color', item.value) : localStorage.setItem('font', item.value);
          })
+         if (item.value === COLOR) item.checked = true; 
          if (item.value === FONT) item.checked = true;
-         if (item.value === COLOR) item.checked = true;
       } 
    }
    getInputValue(fonts)
    getInputValue(colors)
-
+   
    function getColorFromLocalStorage() {
       return localStorage.getItem('color')
    }
@@ -31,6 +31,14 @@ export function settings() {
    }
    changeElementColor()
 
+   function changeProgressBarBcg() {
+      const bars = document.querySelectorAll('.progress-bar');
+      for (let bar of bars) {
+         bar.style.background = `conic-gradient(${COLOR} 0 120deg, #161932 0 120deg)`;
+      }
+   }
+   changeProgressBarBcg() 
+   
    function changeBodyFont () { 
       const body = document.querySelector('.body');
       const buttons = document.querySelectorAll('button');

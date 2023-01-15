@@ -273,12 +273,7 @@ button {
   color: #161932;
 }
 
-@media screen and (min-width: 380px) {
-  .tab-btn {
-    padding: 16px 22px;
-  }
-}
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 480px) {
   .tab-btn {
     font-size: 0.9rem;
     padding: 19px 26px;
@@ -301,53 +296,72 @@ button {
   box-shadow: -50px -50px 100px #272C5A, 50px 50px 100px #121530;
 }
 
-.progress-bcg {
+.progress-inner-layer {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
   background: #161932;
-  width: calc(100% - 18px);
-  height: calc(100% - 18px);
+}
+
+.progress-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 205px;
+  height: 205px;
   border-radius: 50%;
 }
 
-.pie {
-  min-width: 250px;
-  min-height: 250px;
+.progress-outer-layer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: #161932;
 }
 
-.pie > svg {
-  width: 250px;
-  height: 250px;
+.progress__timer {
+  display: flex;
+  color: #fff;
+  font-weight: 400;
+  font-size: 4rem;
 }
 
-.pie-text-1,
-.pie-text-2,
-.pie-text-3 {
-  fill: #D7E0FF;
-  font-size: 1rem;
+.timer-start-stop-btn {
+  color: #fff;
+  letter-spacing: 13px;
+  font-weight: 700;
+  padding-top: 10px;
 }
 
-.pie-circle-1,
-.pie-circle-2,
-.pie-circle-3 {
-  stroke-width: 2px;
-  stroke: #F87070;
-  stroke-linecap: round;
-}
-
-@media screen and (min-width: 380px) {
+@media screen and (min-width: 480px) {
   .progress-wrapp {
-    width: 300px;
-    height: 300px;
+    width: 410px;
+    height: 410px;
   }
-  .pie {
-    min-width: 300px;
-    min-height: 300px;
+  .progress-inner-layer {
+    width: 380px;
+    height: 380px;
   }
-  .pie > svg {
-    width: 300px;
-    height: 300px;
+  .progress-bar {
+    width: 365px;
+    height: 365px;
+  }
+  .progress-outer-layer {
+    width: 345px;
+    height: 345px;
+  }
+  .progress__timer {
+    font-size: 5.6rem;
+  }
+  .timer-start-stop-btn {
+    padding-top: 20px;
   }
 }
 .sett {
@@ -378,7 +392,7 @@ button {
   opacity: 1;
 }
 
-.sett-wrapp {
+.settings-wrapp {
   position: absolute;
   top: 0;
   left: 50%;
@@ -393,11 +407,11 @@ button {
   padding: 24px 24px 59px;
 }
 
-.sett-header {
+.settings-header {
   display: flex;
 }
 
-.sett-title {
+.settings-title {
   font-weight: 700;
   font-size: 1.2rem;
 }
@@ -434,32 +448,32 @@ button {
   background-color: #E3E1E1;
 }
 
-.sett__select {
+.settings__time {
   padding-top: 53px;
   padding-bottom: 24px;
   margin-bottom: 24px;
   border-bottom: 1px solid #E3E1E1;
 }
 
-.select-title {
+.time-title {
   display: flex;
   justify-content: center;
   font-weight: 700;
   font-size: 0.7rem;
   letter-spacing: 4px;
 }
-.select-title ~ .padding-top {
+.time-title ~ .padding-top {
   padding-top: 18px;
 }
 
-.select-time-wrapp {
+.time-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 8px;
 }
 
-.select-time-type {
+.time-type {
   color: #1E213F;
   font-weight: 700;
   font-size: 0.8rem;
@@ -467,23 +481,35 @@ button {
   line-height: 15px;
 }
 
-.select-minutes {
+.time-container {
+  position: relative;
+  background: #EFF1FA;
+  border-radius: 10px;
+  padding: 12px;
+  min-width: 100px;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+.time-label {
   color: #1E213F;
   font-weight: 700;
   font-size: 0.9rem;
   line-height: 17px;
 }
 
-.select-set-time {
-  position: relative;
-  background: #EFF1FA;
-  border-radius: 10px;
-  padding: 12px;
-  min-width: 100px;
-  box-sizing: border-box;
+.time-range {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  position: absolute;
 }
 
-.select-btn-more {
+.time-range::-webkit-slider-thumb {
+  appearance: none;
+}
+
+.time-increment {
   position: absolute;
   cursor: pointer;
   top: 5px;
@@ -492,7 +518,7 @@ button {
   width: 15px;
   opacity: 0.4;
 }
-.select-btn-more::after, .select-btn-more::before {
+.time-increment::after, .time-increment::before {
   content: "";
   position: absolute;
   top: 5px;
@@ -500,15 +526,15 @@ button {
   width: 10px;
   background-color: #1E213F;
 }
-.select-btn-more::after {
+.time-increment::after {
   transform: rotate(-40deg);
 }
-.select-btn-more::before {
+.time-increment::before {
   transform: rotate(40deg);
   right: -2px;
 }
 
-.select-btn-less {
+.time-decrement {
   position: absolute;
   cursor: pointer;
   bottom: 5px;
@@ -517,7 +543,7 @@ button {
   width: 15px;
   opacity: 0.4;
 }
-.select-btn-less::after, .select-btn-less::before {
+.time-decrement::after, .time-decrement::before {
   content: "";
   position: absolute;
   top: 5px;
@@ -525,10 +551,10 @@ button {
   width: 10px;
   background-color: #1E213F;
 }
-.select-btn-less::after {
+.time-decrement::after {
   transform: rotate(40deg);
 }
-.select-btn-less::before {
+.time-decrement::before {
   transform: rotate(-40deg);
   right: -2px;
 }

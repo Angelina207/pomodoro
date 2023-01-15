@@ -23,7 +23,7 @@
     transform: translateY(-500px);
     opacity: 1;
 }
-.sett-wrapp{
+.settings-wrapp{
     position: absolute;
     top: 0;
     left: 50%;
@@ -37,10 +37,10 @@
     border-radius: 15px;
     padding: 24px 24px 59px;
 }
-.sett-header{
+.settings-header{
     display: flex;
 }
-.sett-title{
+.settings-title{
     font-weight: 700;
     font-size: 1.2rem;
 }
@@ -78,13 +78,13 @@
     background-color: #E3E1E1;;
 }
 
-.sett__select{
+.settings__time{
     padding-top: 53px;
     padding-bottom: 24px;
     margin-bottom: 24px;
     border-bottom: 1px solid #E3E1E1;
 }
-.select-title{
+.time-title{
     display: flex;
     justify-content: center;
     font-weight: 700;
@@ -94,36 +94,47 @@
         padding-top: 18px;
     }
 }
-.select-time-wrapp{
+.time-content{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-top: 8px;
 }
-.select-time-type{
+.time-type{
     color: $text;
     font-weight: 700;
     font-size: 0.8rem;
     opacity: 0.4;
     line-height: 15px;
 }
-.select-minutes{
-    color: $text;
-    font-weight: 700;
-    font-size: 0.9rem;
-    line-height: 17px;
-}
-.select-set-time{
+.time-container{
     position: relative;
     background: #EFF1FA;
     border-radius: 10px;
     padding: 12px;
     min-width: 100px;
+    height: 40px;
     box-sizing: border-box;
+}
+.time-label{
+    color: $text;
+    font-weight: 700;
+    font-size: 0.9rem;
+    line-height: 17px;
+}
+.time-range{
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    position: absolute;
+
+}
+.time-range::-webkit-slider-thumb{
+    appearance: none;
 }
 
 // button add +5min
-.select-btn-more{
+.time-increment{
     position: absolute;
     cursor: pointer;
     top: 5px;
@@ -151,9 +162,7 @@
         right: -2px; 
     }
 }
-
-// button delete -5min
-.select-btn-less{
+.time-decrement{
     position: absolute;
     cursor: pointer;
     bottom: 5px;

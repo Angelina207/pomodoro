@@ -1,36 +1,27 @@
-export function settings() {
-    const pomodoro = document.querySelector('#pomodoro');
-    const shortBreak = document.querySelector('#short-break');
-    const longBreak = document.querySelector('#long-break');
-    const defaultMinutes = {
-        pomodoro: '45',
-        shortBreak: '10',
-        longBreak: '20',
-    }
+export function settings() {  
+    let timer = document.querySelector('#timer');
+    let shortBreak = document.querySelector('#shortBreak');
+    let longBreak = document.querySelector('#longBreak');
 
-    function setMinutesByDefault(elem, defaultElemMinute) {
-        const minutes = elem.innerHTML = defaultElemMinute;
-        return minutes
-    }
-    setMinutesByDefault(pomodoro, defaultMinutes.pomodoro)
-    setMinutesByDefault(shortBreak, defaultMinutes.shortBreak)
-    setMinutesByDefault(longBreak, defaultMinutes.longBreak)
+    let timerTime = 45;
+    let minBreak = 5;
+    let maxBreak = 15;
+    
+    timer.innerHTML = timerTime;
+    shortBreak.innerHTML = minBreak;
+    longBreak.innerHTML = maxBreak;
+   
+    document.querySelector('#timer-inc').addEventListener('click', changeTimer.bind(timer, timerTime));
+    document.querySelector('#timer-dec').addEventListener('click', changeTimer);
+    // console.log(timer === timer)
 
-    function addMinutes(minutes) {
-        minutes = 0;
-        const buttons = document.querySelectorAll('.select-btn-more');
-        for (let btn of buttons) {
-            btn.addEventListener('click', () => minutes+=5)
+    function changeTimer (typeTimer, math) {
+        if (console.log(typeTimer === timer)) {
+          math === timerTime ? timerTime++ : timerTime--
+        } else if (typeTimer === shortBreak) {
+          math === 'inc' ? shortBreak++ : shortBreak--
+        } else {
+          math === 'inc' ? longBreak++ : longBreak--
         }
     }
-    addMinutes()
-
-    function delateMinutes(minutes) {
-        minutes = 45;
-        const buttons = document.querySelectorAll('.select-btn-less');
-        for (let btn of buttons) {
-            btn.addEventListener('click', () => minutes-=5)
-        }
-    }
-    delateMinutes()
-}
+} 

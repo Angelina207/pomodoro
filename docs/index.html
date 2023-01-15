@@ -29,64 +29,94 @@
 </section>
         <section class="progress">
     <div class="container">
+
         <div class="progress-wrapp">
-            <div class="progress-bcg">
-                <div class="pie" data-pie='{ "percent": 82}'></div>
+            <div class="progress-inner-layer">
+                <div class="progress-bar">
+                    <div class="progress-outer-layer">
+                        <div class="progress__timer">
+                            <p class="timer-minutes">20</p>
+                            <div class="timer-colon">:</div>
+                            <p class="timer-seconds">59</p>
+                        </div>
+                        <div class="timer-start-stop-btn">PAUSE</div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="progress-wrapp" style="display: none;">
-            <div class="progress-bcg">
-                <div class="pie" data-pie='{ "percent": 22}'></div>
+            <div class="progress-inner-layer">
+                <div class="progress-bar">
+                    <div class="progress-outer-layer">
+                        <div class="progress__timer">
+                            <p class="timer-minutes">20</p>
+                            <div class="timer-colon">:</div>
+                            <p class="timer-seconds">59</p>
+                        </div>
+                        <div class="timer-start-stop-btn">PAUSE</div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="progress-wrapp" style="display: none;">
-            <div class="progress-bcg">
-                <div class="pie" data-pie='{ "percent": 62}'></div>
+            <div class="progress-inner-layer">
+                <div class="progress-bar">
+                    <div class="progress-outer-layer">
+                        <div class="progress__timer">
+                            <p class="timer-minutes">20</p>
+                            <div class="timer-colon">:</div>
+                            <p class="timer-seconds">59</p>
+                        </div>
+                        <div class="timer-start-stop-btn">PAUSE</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
         <section class="sec__setting">
     <div class="">
-        <div class="sett-wrapp">
-            <div class="sett-header">
-                <p class="sett-title">Settings</p>
+        <div class="settings-wrapp">
+            <div class="settings-header">
+                <p class="settings-title">Settings</p>
                 <button class="sett-btn-close"></button>
             </div>
 
             <div class="line"></div>
 
-                <div class="sett__select">
-                    <p class="select-title">TIME (MINUTES)</p>
+                <div class="settings__time">
+                    <p class="time-title">TIME (MINUTES)</p>
 
-                <div class="select-time-wrapp padding-top">
-                    <p class="select-time-type">pomodoro</p>
-                    <div class="select-set-time">
+                <div class="time-content padding-top">
+                    <p class="time-type">pomodoro</p>
+                    <div class="time-container">
                         <div>
-                            <p class="select-minutes" id="pomodoro"></p>
+                            <p class="time-minutes" id="timer"></p>
                         </div>
-                        <div class="select-btn-more"></div>
-                        <div class="select-btn-less"></div>
+                        <div class="time-increment" id="timer-inc" data-increment="0"></div>
+                        <div class="time-decrement" id="timer-dec" data-decrement="0"></div>
                     </div>
                 </div>
-                <div class="select-time-wrapp">
-                    <p class="select-time-type">short break</p>
-                    <div class="select-set-time">
+
+                <div class="time-content padding-top">
+                    <p class="time-type">short braek</p>
+                    <div class="time-container">
                         <div>
-                            <p class="select-minutes" id="short-break"></p>
+                            <p class="time-minutes" id="shortBreak"></p>
                         </div>
-                        <div class="select-btn-more"></div>
-                        <div class="select-btn-less"></div>
+                        <div class="time-increment" data-increment="1"></div>
+                        <div class="time-decrement" data-decrement="1"></div>
                     </div>
                 </div>
-                <div class="select-time-wrapp">
-                    <p class="select-time-type">long break</p>
-                    <div class="select-set-time">
+
+                <div class="time-content padding-top">
+                    <p class="time-type">long braek</p>
+                    <div class="time-container">
                         <div>
-                            <p class="select-minutes" id="long-break"></p>
+                            <p class="time-minutes" id="longBreak"></p>
                         </div>
-                        <div class="select-btn-more"></div>
-                        <div class="select-btn-less"></div>
+                        <div class="time-increment" data-increment="2"></div>
+                        <div class="time-decrement" data-decrement="2"></div>
                     </div>
                 </div>
             </div>

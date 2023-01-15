@@ -8,12 +8,12 @@ export function openSett() {
    document.querySelector('.overlay').addEventListener('click', () => closeSettings())
 
    function displaySettings() {
-    settings.classList.add('is-open');
-    overlay.style.display = 'block';
+        settings.classList.add('is-open');
+        overlay.style.display = 'block';
    }
 
    function closeSettings() {
-    settings.classList.remove('is-open');
-    overlay.style.display = 'none';
+        settings.classList.remove('is-open');
+        overlay.style.display = 'none';
    }
 }
