@@ -16,20 +16,21 @@ export function settings() {
    getInputValue(fonts)
    getInputValue(colors)
    
-   function getColorFromLocalStorage() {
+   function getColorFromLocalStorage() {  // Get current color
       return localStorage.getItem('color')
    }
-   function getFontFromLocalStorage() {
+   function getFontFromLocalStorage() {   // Get current font
       return localStorage.getItem('font')
    }
-   function changeElementColor() {
+
+   // Change color elements
+   function changeCurrentTabColor() {
       const tabs = document.querySelectorAll('.tab-btn');
       for (let i = 0; i < tabs.length; i++) {
          tabs[i].className === 'tab-btn is-active' ? tabs[i].style.background = COLOR : tabs[i].style.background = 'transparent';
       }
-      document.querySelector('.select-btn-apply').style.background = COLOR;
    }
-   changeElementColor()
+   changeCurrentTabColor()
 
    function changeProgressBarBcg() {
       const bars = document.querySelectorAll('.progress-bar');
@@ -38,7 +39,13 @@ export function settings() {
       }
    }
    changeProgressBarBcg() 
+
+   function changeBtnColor() {
+      document.querySelector('.select-btn-apply').style.background = COLOR;
+   }
+   changeBtnColor()
    
+   // Change pages font
    function changeBodyFont () { 
       const body = document.querySelector('.body');
       const buttons = document.querySelectorAll('button');

@@ -20,9 +20,9 @@
     <div class="container">
         <div class="tab-wrapp">
             <div class="tab-btn-list">
-                <div class="tab-btn is-active" data-tab="0">pomodoro</div>
-                <div class="tab-btn" data-tab="1">short break</div>
-                <div class="tab-btn" data-tab="2">long break</div>
+                <div class="tab-btn is-active" id="timerTab" data-tab="0">pomodoro</div>
+                <div class="tab-btn" id="shortBreakTab" data-tab="1">short break</div>
+                <div class="tab-btn" id="longBreakTab" data-tab="2">long break</div>
             </div>
         </div>
     </div>
@@ -35,37 +35,9 @@
                 <div class="progress-bar">
                     <div class="progress-outer-layer">
                         <div class="progress__timer">
-                            <p class="timer-minutes">20</p>
+                            <p class="timer-minutes"></p>
                             <div class="timer-colon">:</div>
-                            <p class="timer-seconds">59</p>
-                        </div>
-                        <div class="timer-start-stop-btn">PAUSE</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="progress-wrapp" style="display: none;">
-            <div class="progress-inner-layer">
-                <div class="progress-bar">
-                    <div class="progress-outer-layer">
-                        <div class="progress__timer">
-                            <p class="timer-minutes">20</p>
-                            <div class="timer-colon">:</div>
-                            <p class="timer-seconds">59</p>
-                        </div>
-                        <div class="timer-start-stop-btn">PAUSE</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="progress-wrapp" style="display: none;">
-            <div class="progress-inner-layer">
-                <div class="progress-bar">
-                    <div class="progress-outer-layer">
-                        <div class="progress__timer">
-                            <p class="timer-minutes">20</p>
-                            <div class="timer-colon">:</div>
-                            <p class="timer-seconds">59</p>
+                            <p class="timer-seconds"></p>
                         </div>
                         <div class="timer-start-stop-btn">PAUSE</div>
                     </div>
