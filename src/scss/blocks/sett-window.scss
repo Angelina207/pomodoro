@@ -116,22 +116,7 @@
     height: 40px;
     box-sizing: border-box;
 }
-.time-label{
-    color: $text;
-    font-weight: 700;
-    font-size: 0.9rem;
-    line-height: 17px;
-}
-.time-range{
-    appearance: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    position: absolute;
 
-}
-.time-range::-webkit-slider-thumb{
-    appearance: none;
-}
 
 // button add +5min
 .time-increment{

@@ -1,11 +1,9 @@
 import * as openSettings from './modules/openSettings.js'
 import * as styleSettings from './modules/styleSettings.js';
 import * as timeSettings from './modules/timeSettings.js';
-import * as progressBar from './modules/progress.js';
 import * as tabButton from './modules/tabs.js'
 
 openSettings.openSett();
 styleSettings.settings();
 timeSettings.settings();
-progressBar.progressBar();
 tabButton.tab();
