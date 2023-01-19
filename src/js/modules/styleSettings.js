@@ -32,14 +32,6 @@ export function settings() {
    }
    changeCurrentTabColor()
 
-   function changeProgressBarBcg() {
-      const bars = document.querySelectorAll('.progress-bar');
-      for (let bar of bars) {
-         bar.style.background = `conic-gradient(${COLOR} 0 120deg, #161932 0 120deg)`;
-      }
-   }
-   changeProgressBarBcg() 
-
    function changeBtnColor() {
       document.querySelector('.select-btn-apply').style.background = COLOR;
    }

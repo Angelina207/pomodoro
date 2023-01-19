@@ -328,16 +328,16 @@ button {
 
 .progress__timer {
   display: flex;
-  color: #fff;
+  color: #D7E0FF;
   font-weight: 400;
   font-size: 4rem;
 }
 
 .timer-start-stop-btn {
-  color: #fff;
+  color: #D7E0FF;
   letter-spacing: 13px;
   font-weight: 700;
-  padding-top: 10px;
+  padding: 10px 0 0 13px;
 }
 
 @media screen and (min-width: 480px) {
@@ -358,10 +358,16 @@ button {
     height: 345px;
   }
   .progress__timer {
-    font-size: 5.6rem;
+    font-size: 6.2rem;
   }
   .timer-start-stop-btn {
     padding-top: 20px;
+    cursor: pointer;
+    transition: all 250ms;
+  }
+  .timer-start-stop-btn:hover,
+  .timer-start-stop-btn:focus {
+    color: #fff;
   }
 }
 .sett {
