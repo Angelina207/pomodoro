@@ -56,80 +56,81 @@
 
             <div class="line"></div>
 
-                <div class="settings__time">
-                    <p class="time-title">TIME (MINUTES)</p>
-
-                <div class="time-content padding-top">
-                    <p class="time-type">pomodoro</p>
-                    <div class="time-container">
-                        <div>
-                            <p class="time-minutes" id="timer"></p>
+            <div class="settings__time">
+                <p class="time-title">TIME (MINUTES)</p>
+                <div class="time-wrapp">
+                    <div class="time-content padding-top">
+                        <p class="time-type">pomodoro</p>
+                        <div class="time-container">
+                            <div>
+                                <p class="time-minutes" id="timer"></p>
+                            </div>
+                            <div class="time-increment" id="timerInc"></div>
+                            <div class="time-decrement" id="timerDec"></div>
                         </div>
-                        <div class="time-increment" id="timerInc"></div>
-                        <div class="time-decrement" id="timerDec"></div>
                     </div>
-                </div>
-
-                <div class="time-content padding-top">
-                    <p class="time-type">short braek</p>
-                    <div class="time-container">
-                        <div>
-                            <p class="time-minutes" id="shortBreak"></p>
+    
+                    <div class="time-content padding-top">
+                        <p class="time-type">short braek</p>
+                        <div class="time-container">
+                            <div>
+                                <p class="time-minutes" id="shortBreak"></p>
+                            </div>
+                            <div class="time-increment" id="shortBreakInc"></div>
+                            <div class="time-decrement" id="shortBreakDec"></div>
                         </div>
-                        <div class="time-increment" id="shortBreakInc"></div>
-                        <div class="time-decrement" id="shortBreakDec"></div>
                     </div>
-                </div>
-
-                <div class="time-content padding-top">
-                    <p class="time-type">long braek</p>
-                    <div class="time-container">
-                        <div>
-                            <p class="time-minutes" id="longBreak"></p>
+    
+                    <div class="time-content padding-top">
+                        <p class="time-type">long braek</p>
+                        <div class="time-container">
+                            <div>
+                                <p class="time-minutes" id="longBreak"></p>
+                            </div>
+                            <div class="time-increment" id="longBreakInc"></div>
+                            <div class="time-decrement" id="longBreakDec"></div>
                         </div>
-                        <div class="time-increment" id="longBreakInc"></div>
-                        <div class="time-decrement" id="longBreakDec"></div>
                     </div>
                 </div>
             </div>
 
-            <div class="border-line">
-                <p class="select-title">FONT</p>
-                <form class="select-font-form" id="form">
-                    <div class="select-radio">
-                        <input type="radio" class="select-radio-btn" name="font" value="KumbhSans" id="kumbh">
-                        <label for="kumbh" class="select-label-font kumbh"></label>
+            <div class="form-wrapp border">
+                <p class="time-title">FONT</p>
+                <form class="form">
+                    <div class="form__radio-btn-wrapp">
+                        <input type="radio" class="radio-btn" name="font" value="KumbhSans" id="kumbh">
+                        <label for="kumbh" class="radio-label-font kumbh"></label>
                     </div>
-                    <div class="select-radio">
-                        <input type="radio" class="select-radio-btn" name="font" value="RobotoSlab" id="roboto">
-                        <label for="roboto" class="select-label-font roboto"></label>
+                    <div class="form__radio-btn-wrapp">
+                        <input type="radio" class="radio-btn" name="font" value="RobotoSlab" id="roboto">
+                        <label for="roboto" class="radio-label-font roboto"></label>
                     </div>
-                    <div class="select-radio">
-                        <input type="radio" class="select-radio-btn" name="font" value="SpaceMono" id="space">
-                        <label for="space" class="select-label-font space"></label>
+                    <div class="form__radio-btn-wrapp">
+                        <input type="radio" class="radio-btn" name="font" value="SpaceMono" id="space">
+                        <label for="space" class="radio-label-font space"></label>
                     </div>
                 </form>
             </div>
 
-            <div class="">
-                <p class="select-title">COLOR</p>
-                <form class="select-color-form">
-                    <div class="select-radio">
-                        <input type="radio" class="select-radio-btn" name="color" value="#F87070" id="red">
-                        <label for="red" class="select-label-color red"></label>
+            <div class="form-wrapp">
+                <p class="time-title">COLOR</p>
+                <form class="form">
+                    <div class="form__radio-btn-wrapp">
+                        <input type="radio" class="radio-btn" name="color" value="#F87070" id="red">
+                        <label for="red" class="radio-label-color red"></label>
                     </div>
-                    <div class="select-radio">
-                        <input type="radio" class="select-radio-btn" name="color" value="#70F3F8" id="blue">
-                        <label for="blue" class="select-label-color blue"></label>
+                    <div class="form__radio-btn-wrapp">
+                        <input type="radio" class="radio-btn" name="color" value="#70F3F8" id="blue">
+                        <label for="blue" class="radio-label-color blue"></label>
                     </div>
-                    <div class="select-radio">
-                        <input type="radio" class="select-radio-btn" name="color" value="#D881F8" id="purple">
-                        <label for="purple" class="select-label-color purple"></label>
+                    <div class="form__radio-btn-wrapp">
+                        <input type="radio" class="radio-btn" name="color" value="#D881F8" id="purple">
+                        <label for="purple" class="radio-label-color purple"></label>
                     </div>
                 </form>
             </div>
 
-            <button class="select-btn-apply">
+            <button class="btn-apply">
                 Apply
             </button>
         </div>

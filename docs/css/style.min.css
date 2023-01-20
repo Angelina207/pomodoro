@@ -258,7 +258,7 @@ button {
   font-weight: 700;
   font-size: 0.8rem;
   line-height: 15px;
-  padding: 14px 10px;
+  padding: 14px 20px;
   border-radius: 26.5px;
   cursor: pointer;
 }
@@ -373,7 +373,7 @@ button {
 .sett {
   display: flex;
   justify-content: center;
-  padding-top: 80px;
+  padding: 80px 0;
 }
 
 .sett-btn {
@@ -394,7 +394,7 @@ button {
 
 .is-open {
   transition: all 500ms;
-  transform: translateY(-500px);
+  transform: translateY(-420px);
   opacity: 1;
 }
 
@@ -467,6 +467,7 @@ button {
   font-weight: 700;
   font-size: 0.7rem;
   letter-spacing: 4px;
+  color: #161932;
 }
 .time-title ~ .padding-top {
   padding-top: 18px;
@@ -492,7 +493,7 @@ button {
   background: #EFF1FA;
   border-radius: 10px;
   padding: 12px;
-  min-width: 100px;
+  min-width: 120px;
   height: 40px;
   box-sizing: border-box;
 }
@@ -547,31 +548,30 @@ button {
   right: -2px;
 }
 
-.border-line {
+.border {
   border-bottom: 1px solid #E3E1E1;
   padding-bottom: 24px;
   margin-bottom: 16px;
 }
 
-.select-font-form,
-.select-color-form {
+.form {
   display: flex;
   justify-content: space-evenly;
   padding-top: 18px;
 }
 
-.select-radio {
+.form__radio-btn-wrapp {
   position: relative;
   width: 40px;
   height: 40px;
 }
 
-.select-radio-btn {
+.radio-btn {
   -webkit-appearance: none;
   appearance: none;
 }
 
-.select-label-font {
+.radio-label-font {
   position: absolute;
   width: 40px;
   height: 40px;
@@ -581,7 +581,7 @@ button {
   font-weight: 700;
   font-size: 1rem;
 }
-.select-label-font::before {
+.radio-label-font::before {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -604,22 +604,22 @@ button {
   font-family: SpaceMono;
 }
 
-.select-radio-btn:checked ~ .select-label-font {
+.radio-btn:checked ~ .radio-label-font {
   background: #161932;
 }
 
-.select-radio-btn:checked ~ .select-label-font::before {
+.radio-btn:checked ~ .radio-label-font::before {
   color: #fff;
 }
 
-.select-label-color {
+.radio-label-color {
   position: absolute;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
 }
-.select-label-color::before {
+.radio-label-color::before {
   content: "";
   position: absolute;
   top: 13px;
@@ -644,11 +644,11 @@ button {
   background: #D881F8;
 }
 
-.select-radio-btn:checked ~ .select-label-color::before {
+.radio-btn:checked ~ .radio-label-color::before {
   opacity: 1;
 }
 
-.select-btn-apply {
+.btn-apply {
   position: absolute;
   bottom: -23.5px;
   left: 50%;
@@ -661,8 +661,57 @@ button {
   padding: 17px 47px;
 }
 
-@media screen and (min-width: 480px) {
-  .select-set-time {
+@media screen and (min-width: 768px) {
+  .settings-title {
+    font-size: 1.8rem;
+  }
+  .settings-wrapp {
+    max-width: 540px;
+    padding: 34px 40px 59px;
+  }
+  .is-open {
+    transform: translateY(-500px);
+  }
+  .line {
+    top: 94px;
+  }
+  .time-wrapp {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 26px;
+  }
+  .time-title {
+    justify-content: flex-start;
+    font-size: 0.8rem;
+    letter-spacing: 5px;
+  }
+  .time-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+  }
+  .time-container {
     min-width: 140px;
+    height: 48px;
+    padding: 16px;
+    margin-top: 10px;
+  }
+  .time-increment {
+    top: 9px;
+  }
+  .time-decrement {
+    bottom: 8px;
+  }
+  .form-wrapp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .form {
+    padding: 0;
+  }
+  .form__radio-btn-wrapp:nth-child(2) {
+    margin: 0 16px;
   }
 }

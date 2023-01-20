@@ -33,7 +33,7 @@ export function settings() {
    changeCurrentTabColor()
 
    function changeBtnColor() {
-      document.querySelector('.select-btn-apply').style.background = COLOR;
+      document.querySelector('.btn-apply').style.background = COLOR;
    }
    changeBtnColor()
    
@@ -51,5 +51,5 @@ export function settings() {
    }
    changeBodyFont()
 
-   document.querySelector('.select-btn-apply').addEventListener('click', () => document.location.reload());  
+   document.querySelector('.btn-apply').addEventListener('click', () => document.location.reload());  
 }

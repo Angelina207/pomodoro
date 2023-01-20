@@ -1,7 +1,7 @@
 .sett {
     display: flex;
     justify-content: center;
-    padding-top: 80px;
+    padding: 80px 0;
 }
 .sett-btn {
     background: transparent;
@@ -20,7 +20,7 @@
 }
 .is-open {
     transition: all 500ms;
-    transform: translateY(-500px);
+    transform: translateY(-420px);
     opacity: 1;
 }
 .settings-wrapp{
@@ -51,7 +51,6 @@
     right: 24px;  
     width: 30px;
     height: 30px;  
-    
     &::after,
     &::before{
         position: absolute;
@@ -90,6 +89,7 @@
     font-weight: 700;
     font-size: 0.7rem;
     letter-spacing: 4px;
+    color: $select-hover;
     & ~ .padding-top{
         padding-top: 18px;
     }
@@ -112,11 +112,10 @@
     background: #EFF1FA;
     border-radius: 10px;
     padding: 12px;
-    min-width: 100px;
+    min-width: 120px;
     height: 40px;
     box-sizing: border-box;
 }
-
 
 // button add +5min
 .time-increment{
@@ -127,7 +126,6 @@
     height: 15px;
     width: 15px;
     opacity: 0.4;
-
     &::after,
     &::before{
         content: '';
@@ -137,11 +135,9 @@
         width: 10px;
         background-color: $text; 
     }
-
     &::after{
         transform: rotate(-40deg);
     }    
-
     &::before{
         transform: rotate(40deg);
         right: -2px; 
@@ -155,7 +151,6 @@
     height: 15px;
     width: 15px;
     opacity: 0.4;
-
     &::after,
     &::before{
         content: '';
@@ -165,11 +160,9 @@
         width: 10px;
         background-color: $text; 
     }
-
     &::after{
         transform: rotate(40deg);
     }    
-
     &::before{
         transform: rotate(-40deg);
         right: -2px; 
@@ -177,27 +170,26 @@
 }
 
 // radio-btn Font & Color
-.border-line{
+.border{
     border-bottom: 1px solid #E3E1E1;
     padding-bottom: 24px;
     margin-bottom: 16px;
 }
-.select-font-form,
-.select-color-form{
+.form{
     display: flex;
     justify-content: space-evenly;
     padding-top: 18px;
 }
-.select-radio{
+.form__radio-btn-wrapp{
     position: relative;
     width: 40px;
     height: 40px;
 }
-.select-radio-btn{
+.radio-btn{
     -webkit-appearance: none;
     appearance: none;
 }
-.select-label-font{    //fonts
+.radio-label-font{ 
     position: absolute;
     width: 40px;
     height: 40px;
@@ -226,13 +218,13 @@
  .space{
     font-family: SpaceMono;
  }
- .select-radio-btn:checked ~ .select-label-font{
+ .radio-btn:checked ~ .radio-label-font{
     background: $overlay;
  }  
- .select-radio-btn:checked ~ .select-label-font::before{
+ .radio-btn:checked ~ .radio-label-font::before{
     color: #fff;
  }
-.select-label-color{    //colors
+.radio-label-color{   
     position: absolute;
     width: 40px;
     height: 40px;
@@ -260,10 +252,10 @@
 .purple {
     background: #D881F8;
 }
-.select-radio-btn:checked ~ .select-label-color::before{
+.radio-btn:checked ~ .radio-label-color::before{
     opacity: 1;
 }
-.select-btn-apply{
+.btn-apply{
     position: absolute;
     bottom: -23.5px;
     left: 50%;
@@ -275,8 +267,58 @@
     font-size: 1rem;
     padding: 17px 47px;
 }
-@media screen and (min-width: 480px) {
-    .select-set-time{
+
+@media screen and (min-width: 768px) {
+    .settings-title{
+        font-size: 1.8rem;
+    }
+    .settings-wrapp{
+        max-width: 540px;
+        padding: 34px 40px 59px;
+    }
+    .is-open {
+        transform: translateY(-500px);
+    }
+    .line{
+        top: 94px;
+    }
+    .time-wrapp{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 26px;
+    }
+    .time-title{
+        justify-content: flex-start;
+        font-size: 0.8rem;
+        letter-spacing: 5px;
+    }
+    .time-content{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+    }
+    .time-container{
         min-width: 140px;
+        height: 48px;
+        padding: 16px;
+        margin-top: 10px;
+    }
+    .time-increment{
+        top: 9px;
+    }
+    .time-decrement{
+        bottom: 8px;
+    }
+    .form-wrapp{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .form {
+        padding: 0;
+    }
+    .form__radio-btn-wrapp:nth-child(2){
+        margin: 0 16px;
     }
 }

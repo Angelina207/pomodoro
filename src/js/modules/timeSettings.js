@@ -1,5 +1,5 @@
 export function settings() { 
-    // Timer config
+    // Timer config    
     let degree        = 360;
     let progressStart = 0;
     let minRem        = 0;
@@ -30,7 +30,6 @@ export function settings() {
     const timerDec      = document.querySelector('#timerDec');
     const shortBreakDec = document.querySelector('#shortBreakDec');
     const longBreakDec  = document.querySelector('#longBreakDec');
-
     // Display current timer bar
     timerTab.addEventListener('click', () => displayCurrentTimer(timerTab, timerTime));
     shortBreakTab.addEventListener('click', () => displayCurrentTimer(shortBreakTab, minBreak));
@@ -42,40 +41,88 @@ export function settings() {
 
     function displayCurrentTimer(currentTab, timer) {
         if (currentTab) {
-            minutes.innerHTML = timer;
+            minutes.innerHTML = timer < 10 ? `0${timer}` : timer;
             seconds.innerHTML = `00`;
         }
     }
     displayCurrentTimer(timerTab, timerTime)
 
-    function getProgressEnd (timer) {
-        return timer * 60 + parseInt(seconds.innerHTML)
-    }
-    function getDegTravel (timer) {
-        return degree / getProgressEnd(timer)
-    }
+    let progressEnd = (timer) => {  return timer * 60   }
+    let moveDegree  = (timer) => {  return degree / progressEnd(timer)  }
+
     function progressTrack (timer) {
         progressStart++;
 
-        minRem = Math.floor((getProgressEnd(timer) - progressStart) / 60);
-        secRem = Math.floor((getProgressEnd(timer) - progressStart) % 60);
-        
+        minRem = Math.floor((progressEnd(timer) - progressStart) / 60);
+        secRem = Math.floor((progressEnd(timer) - progressStart) % 60);
+         
         minutes.innerHTML = minRem < 10 ? `0${minRem}` : minRem;
         seconds.innerHTML = secRem < 10 ? `0${secRem}` : secRem;
 
         progressBar.style.background = `conic-gradient(
-            ${COLOR} ${progressStart * getDegTravel(timer)}deg, 
-            #161932 ${progressStart * getDegTravel(timer)}deg)`;
-        
-        if (progressStart == getProgressEnd(timer)) {
+            ${COLOR} ${progressStart * moveDegree(timer)}deg, 
+            #161932 ${progressStart * moveDegree(timer)}deg)`;
+
+        if (progressStart === progressEnd(timer)) {
             progressBar.style.background = `conic-gradient(
                 ${COLOR} 360deg,
                 ${COLOR} 360deg 
-            )`
+            )`;
+
+            //?????????????????????????????????
+            // clearInterval(progress) 
+            // stopStartBtn.innerHTML = 'RESTART';
+            // progress = null;
+            // progressStart = 0;
         }
     }
-    progressTrack(timerTime)
+    // setInterval(() => progressTrack(timerTime), speed)
 
+    function startStopProgress(currentTab) {
+        if (console.log(!progress && currentTab === timerTab)) { // добавить условие в каждое условие через ? : 
+            setInterval(() => progressTrack(timerTime), speed)  // придумать условие по которому таймер либо будет запускатся, либо останавливаться
+        } 
+        else  if (console.log(!progress && currentTab === shortBreakTab)) {
+            setInterval(() => progressTrack(minBreak), speed)
+        }
+        else {
+            setInterval(() => progressTrack(maxBreak), speed)
+            // clearInterval(progress);
+            // progress = null;
+            // progressStart = 0;
+            // progressBar.style.background = `conic-gradient(
+            //     #161932 360deg,
+            //     #161932 360deg
+            // )`;
+        }
+    }
+    // function resetTimer(timer) {
+    //     if (progress) clearInterval(progress)
+
+    //     progress = null;
+    //     progressStart = 0;
+    //     getProgressEnd(timer);
+    //     getDegTravel(timer);
+    //     progressBar.style.background = `conic-gradient(
+    //         #161932 360deg,
+    //         #161932 360deg
+    //     )`;
+    // }
+
+    // stopStartBtn.addEventListener('click', () => {
+    //     if (stopStartBtn === 'START') {
+    //         if (!parseInt(minutes.innerHTML) === 0 && parseInt(seconds.innerHTML) === 0) {
+    //             stopStartBtn.innerHTML = 'PAUSE'
+    //             startStopProgress()
+    //         } else {
+    //             alert('Укажите время')
+    //         } 
+    //     } else {
+    //         stopStartBtn.innerHTML = 'START'
+    //         startStopProgress()
+    //     }
+    // })
+    // console.log(parseInt(seconds.innerHTML))
     function getTimerFromLocalStorage() { // Get current timer
         return localStorage.getItem('timer')
     }
