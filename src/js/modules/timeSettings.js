@@ -17,7 +17,7 @@ export function settings() {
     let minutes        = document.querySelector('.timer-minutes');
     let seconds        = document.querySelector('.timer-seconds');
     const progressBar  = document.querySelector('.progress-bar');
-    const stopStartBtn = document.querySelector('.timer-start-stop-btn')
+    const stopStartBtn = document.querySelector('.timer-start-stop-btn'); // Button Stop / Start Timer
     // Tab buttons
     const timerTab      = document.querySelector('#timerTab');
     const shortBreakTab = document.querySelector('#shortBreakTab');
@@ -34,10 +34,18 @@ export function settings() {
     timerTab.addEventListener('click', () => displayCurrentTimer(timerTab, timerTime));
     shortBreakTab.addEventListener('click', () => displayCurrentTimer(shortBreakTab, minBreak));
     longBreakTab.addEventListener('click', () => displayCurrentTimer(longBreakTab, maxBreak));
+    // Start / Stop Timer
+    stopStartBtn.addEventListener('click', stopStartTimerBtn);
     // Display time in settings
     timer.innerHTML = timerTime;
     shortBreak.innerHTML = minBreak;
     longBreak.innerHTML = maxBreak;
+
+    function playAudio() {
+        let audio = new Audio();
+        audio.src = '../files/timeEnd.mp3';
+        audio.play();
+    }
 
     function displayCurrentTimer(currentTab, timer) {
         if (currentTab) {
@@ -47,8 +55,8 @@ export function settings() {
     }
     displayCurrentTimer(timerTab, timerTime)
 
-    let progressEnd = (timer) => {  return timer * 60   }
-    let moveDegree  = (timer) => {  return degree / progressEnd(timer)  }
+    let progressEnd = timer => {  return timer * 60   }
+    let moveDegree  = timer => {  return degree / progressEnd(timer)  }
 
     function progressTrack (timer) {
         progressStart++;
@@ -61,22 +69,41 @@ export function settings() {
 
         progressBar.style.background = `conic-gradient(
             ${COLOR} ${progressStart * moveDegree(timer)}deg, 
-            #161932 ${progressStart * moveDegree(timer)}deg)`;
+            #161932 ${progressStart  * moveDegree(timer)}deg)`;
 
-        if (progressStart === progressEnd(timer)) {
+        if (progressStart == progressEnd(timer)) {
             progressBar.style.background = `conic-gradient(
                 ${COLOR} 360deg,
                 ${COLOR} 360deg 
             )`;
-
-            //?????????????????????????????????
-            // clearInterval(progress) 
-            // stopStartBtn.innerHTML = 'RESTART';
-            // progress = null;
-            // progressStart = 0;
+            clearInterval(progress);
+            stopStartBtn.innerHTML = 'RESTART';
+            progress = null;
+            progressStart = 0;
+            playAudio()
         }
     }
-    // setInterval(() => progressTrack(timerTime), speed)
+
+    function stopStartProgress () {
+        if (!progress) {
+            setInterval(() => progressTrack(timerTime), speed)
+        } else {
+            clearInterval(progress);
+            progress = null;
+            progressStart = 0;
+            progressBar.style.background = `conic-gradient(
+                #161932 360deg,
+                #161932 360deg
+            )`;
+        }
+    }
+
+    function stopStartTimerBtn () {
+        if (stopStartBtn.innerHTML === 'START') {
+            stopStartBtn.innerHTML = 'PAUSE';
+            stopStartProgress ()
+        }
+    }
 
     function startStopProgress(currentTab) {
         if (console.log(!progress && currentTab === timerTab)) { // добавить условие в каждое условие через ? : 
@@ -109,20 +136,6 @@ export function settings() {
     //     )`;
     // }
 
-    // stopStartBtn.addEventListener('click', () => {
-    //     if (stopStartBtn === 'START') {
-    //         if (!parseInt(minutes.innerHTML) === 0 && parseInt(seconds.innerHTML) === 0) {
-    //             stopStartBtn.innerHTML = 'PAUSE'
-    //             startStopProgress()
-    //         } else {
-    //             alert('Укажите время')
-    //         } 
-    //     } else {
-    //         stopStartBtn.innerHTML = 'START'
-    //         startStopProgress()
-    //     }
-    // })
-    // console.log(parseInt(seconds.innerHTML))
     function getTimerFromLocalStorage() { // Get current timer
         return localStorage.getItem('timer')
     }
