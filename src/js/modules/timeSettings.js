@@ -43,7 +43,7 @@ export function settings() {
 
     function playAudio() {
         let audio = new Audio();
-        audio.src = '/src/files/timeEnd.mp3';
+        audio.src = '/files/timeEnd.mp3';
         audio.play();
     }
 
