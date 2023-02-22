@@ -86,7 +86,7 @@ export function settings() {
 
     function stopStartProgress () {
         if (!progress) {
-            setInterval(() => progressTrack(timerTime), speed)
+            progress = setInterval(() => progressTrack(timerTime), speed)
         } else {
             clearInterval(progress);
             progress = null;
