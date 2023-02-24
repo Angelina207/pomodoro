@@ -101,28 +101,40 @@ export function settings() {
     function stopStartTimerBtn () {
         if (stopStartBtn.innerHTML === 'START') {
             stopStartBtn.innerHTML = 'PAUSE';
-            stopStartProgress ()
+            stopStartProgress()
+        } 
+        else if (stopStartBtn.innerHTML === 'RESTART') {
+            stopStartBtn.innerHTML = 'PAUSE';
+            stopStartProgress()
+        }
+        else if (stopStartBtn.innerHTML === 'PAUSE') {
+            stopStartBtn.innerHTML = 'CONTINUE';
+            clearInterval(progress)
+        } 
+        else if (stopStartBtn.innerHTML === 'CONTINUE') {
+            stopStartBtn.innerHTML = 'PAUSE';
+            progress = setInterval(() => progressTrack(timerTime), speed)
         }
     }
 
-    function startStopProgress(currentTab) {
-        if (console.log(!progress && currentTab === timerTab)) { // добавить условие в каждое условие через ? : 
-            setInterval(() => progressTrack(timerTime), speed)  // придумать условие по которому таймер либо будет запускатся, либо останавливаться
-        } 
-        else  if (console.log(!progress && currentTab === shortBreakTab)) {
-            setInterval(() => progressTrack(minBreak), speed)
-        }
-        else {
-            setInterval(() => progressTrack(maxBreak), speed)
-            // clearInterval(progress);
-            // progress = null;
-            // progressStart = 0;
-            // progressBar.style.background = `conic-gradient(
-            //     #161932 360deg,
-            //     #161932 360deg
-            // )`;
-        }
-    }
+    // function startStopProgress(currentTab) {
+    //     if (console.log(!progress && currentTab === timerTab)) { // добавить условие в каждое условие через ? : 
+    //         setInterval(() => progressTrack(timerTime), speed)  // придумать условие по которому таймер либо будет запускатся, либо останавливаться
+    //     } 
+    //     else  if (console.log(!progress && currentTab === shortBreakTab)) {
+    //         setInterval(() => progressTrack(minBreak), speed)
+    //     }
+    //     else {
+    //         setInterval(() => progressTrack(maxBreak), speed)
+    //         // clearInterval(progress);
+    //         // progress = null;
+    //         // progressStart = 0;
+    //         // progressBar.style.background = `conic-gradient(
+    //         //     #161932 360deg,
+    //         //     #161932 360deg
+    //         // )`;
+    //     }
+    // }
     // function resetTimer(timer) {
     //     if (progress) clearInterval(progress)
 
